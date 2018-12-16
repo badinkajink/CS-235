@@ -1,0 +1,149 @@
+StackOverdue Design
+
+For this library project, I will leverage heavily "std::unordered_map (hash table)" and "std::multimap (red-black tree)".
+Database (Library):
+main tables storing books and accounts:
+    - std::unordered_map (hash table) will be used to store books with book IDs as keys
+    - std::unordered_map (hash table) will be used to store accounts with account IDs as keys
+
+ordered containers of book and account IDs:
+    - std::set (red-black tree) will be used to store ordered book IDs
+    - std::set (red-black tree) will be used to store ordered account IDs
+
+non-clustered database indices will be built for different fields for books and accounts: contain copies of data sorted by title, author, name, etc
+    - std::multimap (red-black tree) will be used to build indices for title, author, genre, and popularity for books.
+    - std::multimap (red-black tree) will be used to build indices for username and number_of_checkouts.
+
+In my Library database I will implement my main tables, which will store books and accounts, as std::unordered_map hash tables.
+The books and accounts tables will use their respective unique IDs as keys. 
+Using std:unordered_map to store books and accounts will allow for on average O(1) searches, insertions, and deletions.
+
+In order to obtain sorted orders of books and accounts I will use non-clustered database indices.
+Multiple indices will be used to sort by each of the books' and accounts' qualifiers (title/author/genre/popularity, name/checkouts).
+The indices will be non-clustered in that the order of the main data (books and accounts hash tables) will not be affected by index operations.
+Each index is a list of records sorted by the qualifier as non-unique key, with either book ID or account ID as the value, thus retaining the mapping to the main databases of books and accounts. Each index is implemented with std::multimap (which itself will implement a red-black tree).
+Using std::multimap for each index allows for an improved lookup performance with on average O(log(n)) searches, insertions, and deletions.
+Instead of std::map, std::multimap was chosen because it could store non-unique key values.
+
+At the cost of space, database indices will allow for high performance maintenance and lookup for books and accounts via std::multimap.
+In conjunction with the main hash tables for books and accounts data, users will be able to quickly browse, search, and checkout/return books.
+Account and book IDs are stored in sorted order in std::set because it maintains a sorted container of unique key values.
+Accounts will contain books in vectors for convenient iteration and operations on any one particular book checked out/in the account's book history.
+
+7 classes for this project:
+classes: Book, Account, Library, Administrator, BooksFileReader, AccountsFileReader, StackOverdueSimulator.
+
+enum BooksOrderType { TITLE, AUTHOR, GENRE, BOOKID, POPULARITY };
+enum AccountsOrderType { NAME, ACCOUNTID, CHECKOUTS };
+
+class Book {
+    private:
+        int iBookID;
+        string sTitle;
+        string sAuthor;
+        string sGenre;
+        int iPopScore;
+
+        int iDateDue;
+        int iRenewals;
+        bool bIsCheckedOut;
+	int iAcctID;
+    public:
+        Book(string title, string author, string genre)
+            : sTitle(title), sAuthor(author), sGenre(genre) {}
+        various getters/setters
+        string sPrintBookInfo();
+};
+
+class Account {
+    private:
+        int iAcctID;
+        string sUserName;
+	    int iNumCheckedOut;
+
+        vector <int> vCheckedOutBooks;
+        vector <int> vBookHistory; //history of books kept to facilitate recommendations
+    public:
+        Account(int accID, string name, int num)
+            : iAcctID(accID), sUserName(name) , iNumCheckedOut(num) {}
+
+        string sRecommendedBooks();
+        string sPrintAccInfo();
+};
+
+class Library {
+    Contains database of books and accounts and their associated data indices.
+    Also contains methods that execute user commands.
+    private:
+        unordered_map <int, Book*> uBooks; //not sure if map can take pointer object values by pointer
+
+        map <int, int> mBIDs;
+
+        multimap <string, int> mBTitles;
+        multimap <string, int> mBAuthors;
+        multimap <string, int> mBGenres;
+        multimap <int, int> mBPopScores;
+
+        unordered_map <int, Account*> uAccounts; //see above comment
+
+        map <int,int
+
+        multimap <string, int> mAccNames;
+        multimap <int, int> mAccCheckouts;
+
+    public:
+        unsigned int iTime;
+
+        Library(unordered_map books, unordered_map accounts)
+            : uBooks(books), uAccounts(accounts) {}
+
+        string sPrintBooks(BooksOrderType);  // BROWSE
+        string sPrintBook(int bookID);
+        string sSearchBooks(BooksOrderType titleOrAuthor); //will only be passed title or author
+
+        string sPrintAccounts(AccountsOrderType);
+        string sPrintAccount(int acctID);
+
+        bool bCheckout(int acctID, int bookID);
+        bool bRenew(int acctID);
+        bool bReturn(int bookID);
+
+        string sRecommendBooks(int acctID);
+
+        bool bAddBook(string title, string author, string genre);
+        bool bRemoveBook(int bookID);
+
+        bool bAddAccount(string UserName);
+        bool bRemoveAccount(int acctID)
+
+        string sPrintSystem();
+        bool bTimeTravel(unsigned int);
+        bool bExport(ofstream, ofstream); //parameters will be files passed from Administrator method call
+        string sPrintHelp();
+        bool exit();
+};
+
+class Administrator {
+    Interfaces between Library and command line to execute inputted commands and display generated output.
+    private:
+        Contains Library.
+    public:
+        Contains wrapper methods for all operations in Library class to generate output messages.
+        For example, there would be a "string bRemoveAccount" to check Library's "bool bRemoveAccount" and return a message with the removed ID#.
+};
+
+class BooksFileReader {
+    Reads books file and passes data to data structures contained in Library.
+};
+
+class AccountsFileReader {
+    Reads accounts file and passes data to data structures contained in Library.
+};
+
+class StackOverdueSimulator {
+    Creates Library.
+    Creates BooksFileReader and AccountsFileReader.
+    Creates Administrator.
+    Main method.
+};
+

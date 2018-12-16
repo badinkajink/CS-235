@@ -1,0 +1,143 @@
+http://www.cplusplus.com/doc/tutorial/files/
+http://www.geeksforgeeks.org/unordered_map-in-stl-and-its-applications/
+http://thispointer.com/unordered_map-usage-tutorial-and-example/
+http://thispointer.com/multimap-example-and-tutorial-in-c/
+http://www.cplusplus.com/reference/map/multimap/rbegin/
+http://www.cplusplus.com/reference/map/multimap/erase/
+http://www.cplusplus.com/reference/map/multimap/equal_range/
+https://stackoverflow.com/questions/8234779/how-to-remove-from-a-map-while-iterating-it
+https://stackoverflow.com/questions/14511860/erasing-elements-in-a-multimap-while-iterating
+http://www.cplusplus.com/reference/unordered_map/unordered_map/insert/
+http://www.cplusplus.com/reference/unordered_map/unordered_map/find/
+http://www.cplusplus.com/reference/set/set/set/
+http://www.cplusplus.com/reference/set/set/erase/
+https://stackoverflow.com/questions/1701067/how-to-check-that-an-element-is-in-a-stdset
+https://stackoverflow.com/questions/1342045/how-do-i-find-the-largest-int-in-a-stdsetint
+
+https://stackoverflow.com/questions/10376199/how-can-i-use-non-default-delimiters-when-reading-a-text-file-with-stdfstream
+http://www.cplusplus.com/forum/general/17771/
+https://stackoverflow.com/questions/5607589/right-way-to-split-an-stdstring-into-a-vectorstring
+https://stackoverflow.com/questions/4197697/c-ifstream-function-and-field-separators
+https://stackoverflow.com/questions/12133379/c-using-ifstream-with-getline
+http://www.cplusplus.com/reference/string/string/find/
+
+http://www.cplusplus.com/reference/new/operator%20delete/
+
+https://www.tutorialspoint.com/cplusplus/cpp_static_members.htm
+
+read command line input:
+http://www.cplusplus.com/forum/articles/6046/
+
+https://stackoverflow.com/questions/8302797/convert-string-into-all-uppercase-c
+http://www.cplusplus.com/reference/string/string/compare/
+https://stackoverflow.com/questions/3756473/what-header-file-needs-to-be-included-for-using-nullptr-in-g
+https://stackoverflow.com/questions/6875683/using-map-functions-ubuntu
+
+linking unordered_map on linux:
+http://www.tk4479.net/yefengzhichen/article/details/47039757
+added $(LFLAGS) when trying to link the program
+g++ -c -Wall -std=c++11 AccountManager.cpp -o AccountManager.o
+g++ -std=c++11 -o StackOverdue StackOverdueSimulator.o Book.h Account.h Time.h BookFileReader.h BookFileReader.o BookManager.h BookManager.o AccountFileReader.h AccountFileReader.o AccountManager.h AccountManager.o
+
+> export
+Enter the name of the books file. (This may overwrite a file)
+> mybook.txt
+Enter the name of the accounts file. (This may overwrite a file)
+> myacct.txt
+Books data successfully exported to "mybook.txt".
+Accounts data successfully exported to "myacct.txt".
+
+> recommend
+Enter the account id.
+> 1
+No available recommendations.
+> recommend
+Enter the account id.
+> 6
+You love Horror. We recommend:
+1. "The Organized Backing up of Sensor" by Lorna Cole (BookID# 107) [Horror]. AVAILABLE.
+2. "The Ameliorated Synthesizing of Card" by Tyreek Von (BookID# 33) [Horror]. AVAILABLE.
+You love Sabina Schneider. We recommend:
+1. "The User-centric Synthesizing of Card" by Sabina Schneider (BookID# 169) [Drama]. AVAILABLE.
+
+William.Xie37
+ZmFv5QzY
+
+hours on this project:
+Friday, 12/8: 4pm-12am (7 hours) // parse argc/argv, read books.data
+Saturday, 12/9: 10am-11pm (11 hours) // read accounts.data, LFLAGS in linking on linux for maps
+Sunday, 12/10: 10am-12am (12 hours) // streamline administrators->library->bookmgr/acctmgr interface, cmds: book/search/time/help/exit
+Monday, 12/11: 5pm-12am (5 hours) //browse multimap indices. segmentation fault on linux. cmds: browse; leap/colleges
+Tuesday, 12/12: 2pm-11pm (6 hours) // fix the return value "string" issue for function. gas range disconnect. cmds: accounts/account; leap/colleges
+Wednesday, 12/13: 5pm-1am (6 hours) //change vector to set for account. gas range reconnect. cmds: checkout/renew/return
+Thursday, 12/14: 8am-2pm (4 hours) //check for no acct/books; cmds: adda/removea/system
+Thursday, 12/14: 3pm-6pm (3 hours) //cmds: addb/removeb
+Thursday, 12/14: 6pm-9pm (3 hours) //cmds: recommend (1st half)
+Thursday, 12/14: 9pm-11pm (2 hours) //cmds: export; test other data files, comments
+Friday, 12/15: 	1am-4am (3 hours) //cmd: recommend (2nd half)
+Total: 62 hours 
+
+> accounts
+Enter the criteria to search by. (name/accountid/checkouts)
+> checkouts
+1. William Xie (AccountID# 2). No books checked out.
+2. Dennis Xie (AccountID# 1). No books checked out.
+
+
+git add *
+git commit -m "finish 2nd half of recommend function"
+git push origin assignment 
+
+
+844 819 3909
+aaron
+
+BookManager.cpp: In member function 'std::__cxx11::string BookManager::searchAllBooks()':
+BookManager.cpp:223:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+BookManager.cpp: In member function 'void BookManager::searchBooksByTitle(std::__cxx11::string)':
+BookManager.cpp:226:9: warning: unused variable 'count' [-Wunused-variable]
+     int count = 1;
+         ^
+BookManager.cpp: In member function 'std::__cxx11::string BookManager::searchBooksByAuthor(std::__cxx11::string)':
+BookManager.cpp:268:1: warning: no return statement in function returning non-void [-Wreturn-type]
+
+
+
+4. "The Open-source Programming of Application" by Daryl Kling (BookID# 122) [Science Fiction]. CHECKED OUT (AccountID# 15).
+
+[William.Xie37@cslab13 StackOverdue]$ ./StackOverdueSolution books.data accounts.data
+Loading books from "books.data".
+Loading accounts from "accounts.data".
+>  help
+Invalid command.
+
+> HELp
+BROWSE: Provides the status of all the books.
+BOOK: Provides the status of a specific book.
+SEARCH: Searches for all books with a key-phrase in the title or author.
+ACCOUNTS: Provides account snapshots for all user accounts.
+ACCOUNT: Provides an account snapshot for a specific user account.
+CHECKOUT: Checks a book out to a user account.
+RENEW: Renews a checked out book. (Up to two times allowed)
+RETURN: Returns a checked out book.
+RECOMMEND: Generates a list of recommended books for a given user.
+ADDB: Adds a new book to the library.
+REMOVEB: Removes a specific book from the library.
+ADDA: Creates a new user account in the library.
+REMOVEA: Removes a specific user account from the library.
+SYSTEM: Provides diagnostic information about the system.
+TIME: Fast forwards the system time by a specified number of days.
+EXPORT: Exports the library’s books and accounts to files.
+HELP: Displays this help menu.
+EXIT: Exits the program.
+
+> abc
+Invalid command.
+
+
+https://www.itproportal.com/2013/12/10/a-closer-look-at-litecoin-mining-is-it-worth-doing/
+https://www.bitcoinmining.com/what-is-litecoin-mining/
+http://www.vnbitcoin.org/litecoincalculator.php
+

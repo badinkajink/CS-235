@@ -1,0 +1,3 @@
+C:/dennis/projects/JackBlack/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/dennis/projects/JackBlack/cmake-build-debug/CMakeFiles/JackBlack.dir
+C:/dennis/projects/JackBlack/cmake-build-debug/CMakeFiles/edit_cache.dir

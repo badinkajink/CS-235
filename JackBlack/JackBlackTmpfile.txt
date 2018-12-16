@@ -1,0 +1,278 @@
+[William.Xie37@cslab13 badinkajink-assignment2-JackBlack-master]$ vi *.data
+2 files to edit
+[William.Xie37@cslab13 badinkajink-assignment2-JackBlack-master]$ JackBlack
+JackBlack: command not found
+[William.Xie37@cslab13 badinkajink-assignment2-JackBlack-master]$ ./JackBlack
+No deck file provided. Using default deck file instead.
+No players file provided. Using default players file instead.
+Running simulation with players:
+Roxanne (Max Hit: 25)
+Hal (Max Hit: 21)
+Barry (Max Hit: 18)
+Ann (Max Hit: 24)
+
+ROUND 1
+Roxanne: 12, 4, 14. TOTAL: 30.
+Hal: 10, 11, international (4). TOTAL: 25.
+Barry: 9, 12. TOTAL: 21.
+Ann: = (9/14 --> 9), 3, 6, 15. TOTAL: 33 (BUST).
+WINNER: Roxanne.
+
+ROUND 2
+Roxanne: 15, 11. TOTAL: 26.
+Hal: 14, 5, 1, 13. TOTAL: 33 (BUST).
+Barry: several (11), 5, 13. TOTAL: 29.
+Ann: turn (6), 12, 3, 10. TOTAL: 31.
+WINNER: Ann.
+
+ROUND 3
+Roxanne: 11, 14, 11. TOTAL: 36 (BUST).
+Hal: + (7/10 --> 10), 5, 14. TOTAL: 29.
+Barry: 1, 11, local (8). TOTAL: 20.
+Ann: 4, % (3/4 --> 4), 6, 9, 1, they (6). TOTAL: 30.
+WINNER: Ann.
+
+ROUND 4
+Roxanne: realize (12), because (12), ^ (3/6 --> 6). TOTAL: 30.
+Hal: 3, 7, 11, 7. TOTAL: 28.
+Barry: 11, 9. TOTAL: 20.
+Ann: 6, scene (8), 6, 3, 15. TOTAL: 38 (BUST).
+WINNER: Roxanne.
+
+ROUND 5
+Roxanne: # (1/7 --> 7), 15, 6. TOTAL: 28.
+Hal: 12, ^ (6/7 --> 7), person (9). TOTAL: 28.
+Barry: 15, + (4/10 --> 10). TOTAL: 25.
+Ann: 6, & (2/4 --> 4), 3, 15. TOTAL: 28.
+TIED: Roxanne, Hal, Ann.
+
+ROUND 6
+Roxanne: 5, 7, 12, government (14). TOTAL: 38 (BUST).
+Hal: # (4/10 --> 10), wonder (9), least (8). TOTAL: 27.
+Barry: 3, 10, 4, 10. TOTAL: 27.
+Ann: 13, best (6), 2, 12. TOTAL: 33 (BUST).
+TIED: Hal, Barry.
+
+ROUND 7
+Roxanne: 11, $ (10/16 --> 16). TOTAL: 27.
+Hal: 4, 1, 7, 6, | (4/10 --> 10). TOTAL: 28.
+Barry: sweater (11), @ (5/10 --> 10). TOTAL: 21.
+Ann: 7, 3, 3, 12. TOTAL: 25.
+WINNER: Hal.
+
+ROUND 8
+Roxanne: @ (6/11 --> 11), 7, 8. TOTAL: 26.
+Hal: 9, 3, 3, 6, 15. TOTAL: 36 (BUST).
+Barry: 2, 11, 9. TOTAL: 22.
+Ann: 13, * (9/15 --> 15). TOTAL: 28.
+WINNER: Ann.
+
+ROUND 9
+Roxanne: 14, 13. TOTAL: 27.
+Hal: 13, 14. TOTAL: 27.
+Barry: 1, 5, 8, 10. TOTAL: 24.
+Ann: 3, 1, 14, 6, ~ (4/10 --> 4). TOTAL: 28.
+WINNER: Ann.
+
+ROUND 10
+Roxanne: 14, 1, 2, 13. TOTAL: 30.
+Hal: 7, 5, 13. TOTAL: 25.
+Barry: 11, interest (12). TOTAL: 23.
+Ann: 7, anything (11), 13. TOTAL: 31.
+WINNER: Ann.
+
+ROUND 11
+Roxanne: 13, 11, 4. TOTAL: 28.
+Hal: 15, 7. TOTAL: 22.
+Barry: 2, 15, 14. TOTAL: 31.
+Ann: 15, 1, 14. TOTAL: 30.
+WINNER: Barry.
+
+ROUND 12
+Roxanne: 2, 10, 2, 12. TOTAL: 26.
+Hal: 9, 8, 14. TOTAL: 31.
+Barry: / (2/8 --> 8), * (3/8 --> 8), personal (12). TOTAL: 28.
+Ann: 3, wife (7), artist (9), - (2/3 --> 3), 7. TOTAL: 29.
+WINNER: Hal.
+
+ROUND 13
+Roxanne: 5, / (8/12 --> 8), * (4/6 --> 4), 10. TOTAL: 27.
+Hal: 2, 12, feel (7), 1. TOTAL: 22.
+Barry: ^ (7/10 --> 10), 1, 11. TOTAL: 22.
+Ann: 2, 9, 10, 9. TOTAL: 30.
+WINNER: Ann.
+
+ROUND 14
+Roxanne: 12, school (9), 7. TOTAL: 28.
+Hal: 2, & (4/7 --> 7), 6, 8. TOTAL: 23.
+Barry: $ (7/8 --> 8), 12. TOTAL: 20.
+Ann: 11, 2, 9, 2, recognize (14). TOTAL: 38 (BUST).
+WINNER: Roxanne.
+
+ROUND 15
+Roxanne: 3, 3, 15, treatment (13). TOTAL: 34 (BUST).
+Hal: nice (7), 1, 1, city (6), 1, - (2/4 --> 4), 2. TOTAL: 22.
+Barry: 15, 7. TOTAL: 22.
+Ann: 14, 5, $ (8/14 --> 8). TOTAL: 27.
+WINNER: Ann.
+
+ROUND 16
+Roxanne: across (9), 7, & (7/12 --> 12). TOTAL: 28.
+Hal: 9, 14. TOTAL: 23.
+Barry: white (8), between (11). TOTAL: 19.
+Ann: 11, 13, finger (9). TOTAL: 33 (BUST).
+WINNER: Roxanne.
+
+ROUND 17
+Roxanne: fast (6), = (1/6 --> 1), region (10), 15. TOTAL: 32 (BUST).
+Hal: south (8), 7, require (12). TOTAL: 27.
+Barry: 2, 10, 8. TOTAL: 20.
+Ann: 12, 8, 2, 7. TOTAL: 29.
+WINNER: Ann.
+
+ROUND 18
+Roxanne: % (4/10 --> 10), 8, 13. TOTAL: 31.
+Hal: 8, 10, 8. TOTAL: 26.
+Barry: 14, + (10/15 --> 15). TOTAL: 29.
+Ann: 7, 3, 9, 2, 8. TOTAL: 29.
+WINNER: Roxanne.
+
+ROUND 19
+Roxanne: 12, likely (9), 12. TOTAL: 33 (BUST).
+Hal: 10, 3, 7, 5. TOTAL: 25.
+Barry: 9, 15. TOTAL: 24.
+Ann: 6, 8, ! (8/14 --> 14). TOTAL: 28.
+WINNER: Ann.
+
+ROUND 20
+Roxanne: 11, 9, 15. TOTAL: 35 (BUST).
+Hal: 11, @ (4/9 --> 4), 13. TOTAL: 28.
+Barry: + (7/10 --> 10), 13. TOTAL: 23.
+Ann: perhaps (10), 3, condition (14). TOTAL: 27.
+WINNER: Hal.
+
+ROUND 21
+Roxanne: 13, 7, % (5/7 --> 7). TOTAL: 27.
+Hal: care (7), 4, ^ (4/7 --> 7), 5. TOTAL: 23.
+Barry: 8, 4, % (3/5 --> 5), 14. TOTAL: 31.
+Ann: 14, 6, positive (13). TOTAL: 33 (BUST).
+WINNER: Barry.
+
+ROUND 22
+Roxanne: 10, 3, 7, - (1/6 --> 6). TOTAL: 26.
+Hal: # (5/11 --> 11), 12. TOTAL: 23.
+Barry: 10, 6, 15. TOTAL: 31.
+Ann: 14, 11. TOTAL: 25.
+WINNER: Barry.
+
+ROUND 23
+Roxanne: ~ (8/9 --> 9), 3, 13, 1. TOTAL: 26.
+Hal: 6, 1, 10, 2, 8. TOTAL: 27.
+Barry: 3, # (3/9 --> 9), term (6), 10. TOTAL: 28.
+Ann: 12, 8, | (4/6 --> 6). TOTAL: 26.
+WINNER: Barry.
+
+ROUND 24
+Roxanne: ~ (2/6 --> 2), their (8), race (7), serious (12). TOTAL: 29.
+Hal: 14, 12. TOTAL: 26.
+Barry: 13, 6. TOTAL: 19.
+Ann: 1, / (2/7 --> 7), 1, 6, 2, 8. TOTAL: 25.
+WINNER: Roxanne.
+
+ROUND 25
+Roxanne: list (6), shark (7), 13. TOTAL: 26.
+Hal: 8, 6, 13. TOTAL: 27.
+Barry: $ (5/10 --> 10), 14. TOTAL: 24.
+Ann: 15, 8, 4. TOTAL: 27.
+TIED: Hal, Ann.
+
+ROUND 26
+Roxanne: 12, 6, 5, 14. TOTAL: 37 (BUST).
+Hal: = (8/9 --> 9), 4, 10. TOTAL: 23.
+Barry: 15, 8. TOTAL: 23.
+Ann: 14, 11. TOTAL: 25.
+WINNER: Ann.
+
+ROUND 27
+Roxanne: 3, 13, | (1/2 --> 1), 6, 10. TOTAL: 33 (BUST).
+Hal: 5, 14, 3. TOTAL: 22.
+Barry: that (6), ! (4/10 --> 10), 15. TOTAL: 31.
+Ann: 7, evening (11), 8. TOTAL: 26.
+WINNER: Barry.
+
+ROUND 28
+Roxanne: 15, 1, 14. TOTAL: 30.
+Hal: 11, 6, 3, 6. TOTAL: 26.
+Barry: 3, 9, wall (6), 3. TOTAL: 21.
+Ann: ! (8/14 --> 14), 14. TOTAL: 28.
+WINNER: Roxanne.
+
+ROUND 29
+Roxanne: 12, 14. TOTAL: 26.
+Hal: 5, 13, & (8/9 --> 9). TOTAL: 27.
+Barry: 8, 6, 8. TOTAL: 22.
+Ann: 6, 3, site (7), 6, 10. TOTAL: 32 (BUST).
+WINNER: Hal.
+
+ROUND 30
+Roxanne: 6, 14, 3, 14. TOTAL: 37 (BUST).
+Hal: 4, 9, 2, ! (1/3 --> 3), @ (3/8 --> 8). TOTAL: 26.
+Barry: 1, 12, 14. TOTAL: 27.
+Ann: 10, 15. TOTAL: 25.
+WINNER: Barry.
+
+FINAL TALLY
+Roxanne. WINS: 7. LOSSES: 22. TIES: 1.
+Hal. WINS: 4. LOSSES: 23. TIES: 3.
+Barry. WINS: 6. LOSSES: 23. TIES: 1.
+Ann. WINS: 10. LOSSES: 18. TIES: 2.
+
+GAME ANALYSIS
+Average number of hits per player per round: 2.28.
+Average number of cards in winning hands: 3.41.
+Average number of cards in losing hands: 3.24.
+
+Average number of number cards in winning hands: 2.41.
+Average number of word cards in winning hands: 0.44.
+Average number of symbol cards in winning hands: 0.56.
+Words from winning hands: turn, they, realize, because, anything, school, across, term, their, race, serious, that.
+[William.Xie37@cslab13 badinkajink-assignment2-JackBlack-master]$
+
+
+
+#ifndef __CSCI235_FLASHCARD_CPP_
+#define __CSCI235_FLASHCARD_CPP_
+
+#include "Flashcard.h"
+
+ostream& operator << (ostream& out, const Flashcard& c) {
+  out << c.front << "\n" << c.back << "\n\n";
+  return out;
+}
+
+
+#endif
+
+http://www.cplusplus.com/reference/ios/ios/rdbuf/
+http://www.cplusplus.com/reference/stack/stack/top/
+http://www.cplusplus.com/doc/tutorial/inheritance/
+http://www.cplusplus.com/doc/tutorial/typecasting/
+http://www.bogotobogo.com/cplusplus/upcasting_downcasting.php
+
+set(SOURCE_FILES
+        catch.h
+        Flashcard.cpp
+        Flashcard.h
+        FlashcardDeck.cpp
+        FlashcardDeck.h
+        FlashcardDeckTester.cpp
+	main.cpp
+        UniqueVector.cpp
+        UniqueVector.h
+        UniqueVectorTester.cpp)
+
+
+eniac.cs.hunter.cuny.edu
+http://college.wfu.edu/~fulp/CSC112/codeStyle.html
+http://college.wfu.edu/cs/?q=_fulp%2FCSC112%2FcodeStyle.html
+

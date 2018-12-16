@@ -1,0 +1,191 @@
+
+For this JackBlack project, I will use the data structures vector and stack.  I will have 5 main classes: Card, Player, Round, Analytics, and Game.
+
+Card class:
+This Card class contains all possible data needed for all three types of cards: Number, Word, and Symbol.  
+	CardType cType;
+	int	value;
+	string	word;
+	char	symbol;
+	int	min;
+	int	max;
+This Card class has basic functions like get/set for each of the data fields, and the function "calcValueFromWord".
+
+Player class:
+This Player class contains data fields like: name, Max Hit, a vector of cards for a given round, its final score, num of hits, number of Number cards, and bool value isWinner.
+	string	sName;
+	int	iMaxHit;
+	vector <Card> vPlayerCards;
+	int	iScore;
+	int	iHits;
+	int	iNumCards;
+	bool	isWinner;
+This Player class has functions:
+	int	calcMaxScore(); 	// To calculate the max score based on the number of cards the player has.
+	bool	hit(stack <Card> myCardsDeck); 	// To hit a new card
+	bool	act(stack <Card> myCardsDeck); 	//decides to keep hitting or stand
+	string	printCards();			//print the cards the player has.
+
+Round class:
+This Round class contains data fields like the number of rounds, the name of winner for the round, and a vector of players.
+	int iRound;
+	string sWinner;
+	vector <Player> vPlayer;
+This Round class has functions:
+	string determineWinner();	// decides who is the winner.
+	vector<Player> returnPlayers();	// returns the vector of the players.
+
+Analytics class:
+This Analytics class contains no private data fields.
+This Analytics class has function:
+	printStats (vRound);		// prints all statistics by traversing the vector of Round.
+
+Game class:
+This Game class contains no private data fields.
+	string deckFileName;
+	string playerFileName;
+This Game class has function:
+	readCommandLineArgs();	//read the command line arguments and test for boundary conditions: no deck file; no players file
+	CreatePlayersFromFile(playerFileName, vPlayer); // read the list of players and test for boundary conditions: minimum 2; maximum 10
+	CreateDeckFromFile(deckFileName, myCardsDeck);  // read the deck file. Each line of data is inserted as a card to the stack.
+	PlayGame (stack <Card> myCardsDeck, vector <Player> vPlayer, vector <Round> vRound); // The function plays the game by hitting the cards for each player in each round.
+
+
+
+The logical flow of the game:
+	1. read the command line args.
+	2. create the deck of cards from the deck file.
+	3. create the list of players from the player file.
+	4. play the game. Inside this PlayGame function, there is a while loop to check if the stack of cards is empty. If not, we insert a Round object. 
+		Inside the Round constructor, we copy the list of players to the local vector of Player.
+		Inside another while loop, if the stack of cards is not empty and not every player has played yet, that player will keep hitting the cards and add them to its local vector of cards.
+		In a high level, you can visualize this sequence: cards-> players -> rounds
+	5. print out the statistics.
+
+
+
+
+
+
+
+enum CardType {Number, Word, Symbol}
+
+Card class
+	private:
+		CardType cType;
+		int	value;
+		string	word;
+		char	symbol;
+		int	min;
+		int	max;
+	public:
+		void setType (CardType);
+		void setValue (int);
+		void setWord (string);
+		void setSymbol (char);
+		void setMin(int);
+		void setMax(int);
+
+		CardType getType();
+		string	getWord();
+		string	getSymbol();
+		int calcValueFromWord (string);
+		int getMin();
+		int getMax();
+};
+
+
+Player class
+	private:
+		string	sName;
+		int	iMaxHit;
+		vector <Card> vPlayerCards;
+		int	iScore;
+		int	iHits;
+		int	iNumCards;
+		bool	isWinner;
+		
+	public:
+		int calcMaxScore();
+		bool hit(stack <Card> myCardsDeck); //helper for action
+		bool act(stack <Card> myCardsDeck); //decides to keep hitting or stand
+		string printCards();
+
+
+Round class
+	private:
+		int iRound;
+		int iPlayerSize;
+		string sWinner;
+		vector <Player> vPlayer;
+	Public:
+		int getPlayerSize();
+		string determineWinner();
+		vector<Player> returnPlayers();
+
+
+Analytics class:
+	public:
+		printStats (vRound);
+			take the input as vRound and traverse through the rounds to calculate all the  below stats:
+			the average number of hits per player per round, 
+			the average size of a winning hand, 
+			the average size of a losing hand
+			extra credit:
+			The average number of number, word, and symbol cards appearing in winning hands.
+			A list of the words appearing in winning hands, in the order that they appear.
+
+
+Game class:
+	private:
+		string deckFileName;
+		string playerFileName;
+
+	Public:
+		//read the command line arguments and test for boundary conditions: no deck file; no players file
+		readCommandLineArgs();		
+
+		// read the list of players and test for boundary conditions: minimum 2; maximum 10
+		CreatePlayersFromFile(playerFileName, vPlayer);
+
+		// read the deck file. Each line of data is inserted as a card to the stack.
+		CreateDeckFromFile(deckFileName, myCardsDeck);
+
+
+		PlayGame (stack <Card> myCardsDeck, vector <Player> vPlayer, vector <Round> vRound);
+		{
+			int	iRound=0;
+			int	iPlayerSize;
+			bool	isMoreCard=true;
+
+			iPlayerSize=vPlayer.size();
+			while (!myCardsDeck.empty())	{
+
+				vRound.insert(vPlayer);
+				i = 0;
+				while (i < iPlayerSize && isMoreCard == true) {
+					isMoreCard=vRound.at(iRound).returnPlayers().at(i).act(myCardsDeck);
+					i++;
+				}
+
+				if (i == iPlayerSize ) {
+					// all players have hit, and this round finishes.
+					vRound.at(iRound).determineWiner();
+					iRound ++;
+				}
+			}
+		}
+
+	main function:
+		stack <Card> myCardsDeck;
+		vector <Player> vPlayer;
+		vector <Round> vRound;
+		
+		readCommandLineArgs();		
+		CreateDeckFromFile(deckFileName, myCardsDeck);
+		CreatePlayersFromFile(playerFileName, vPlayer);
+
+		PlayGame (myCardsDeck,vPlayer,vRound);
+
+		Analytics.printStats();
+
